@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Add440300City extends Migration
+class Add650000City250324 extends Migration
 {
 
     public function beforeCmmUp()
@@ -25,12 +26,10 @@ class Add440300City extends Migration
     public function up()
     {
         //
-        $upid = 440300;
-        $level = 3;
+        $upid = 650000;
+        $level = 2;
         $data = [
-            ['id' => 440309, 'cname' => '龙华区', 'cname1' => '', 'upid' => $upid, 'ename' => '', 'pinyin' => '', 'level' => $level],
-            ['id' => 440310, 'cname' => '坪山区', 'cname1' => '', 'upid' => $upid, 'ename' => '', 'pinyin' => '', 'level' => $level],
-            ['id' => 440311, 'cname' => '光明区', 'cname1' => '', 'upid' => $upid, 'ename' => '', 'pinyin' => '', 'level' => $level],
+            ['id' => 659004, 'cname' => '五家渠市', 'cname1' => '五家渠', 'upid' => $upid, 'ename' => '', 'pinyin' => '', 'level' => $level],
         ];
 
         DB::table('qs_area')->insertOrIgnore($data);
@@ -44,8 +43,6 @@ class Add440300City extends Migration
     public function down()
     {
         //
-        $ids = [440309, 440310, 440311];
-        DB::table('qs_area')->whereIn('id', $ids)->delete();
     }
 
     public function afterCmmUp()
