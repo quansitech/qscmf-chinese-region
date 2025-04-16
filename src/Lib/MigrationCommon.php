@@ -14,7 +14,7 @@ class MigrationCommon
 
         $table = env('QSCMF_CHINESE_REGION_TABLE_NAME', '');
         if (empty($table)) {
-            self::throwErr("请在.env文件中设置QSCMF_CHINESE_REGION_TABLE_NAME");
+            self::throwErr("请在.env文件中设置 QSCMF_CHINESE_REGION_TABLE_NAME ");
         }
 
         if (!Schema::hasTable($table)){

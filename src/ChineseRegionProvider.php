@@ -9,7 +9,12 @@ class ChineseRegionProvider implements LaravelProvider, Provider {
 
     public function registerLara(): void
     {
-        RegisterContainer::registerMigration(__DIR__.'/migrations');
+        $dir = env('QSCMF_CHINESE_REGION_MIGRATION_DIR');
+        if (empty($dir)){
+            throw new \Exception("请在.env文件中设置 QSCMF_CHINESE_REGION_MIGRATION_DIR ");
+        }
+
+        RegisterContainer::registerMigration(__DIR__.'/migrations/'.$dir.'/migrations');
     }
 
     public function register()
