@@ -14,10 +14,10 @@ composer require quansitech/qscmf-chinese-region
 + 设置ENV
   ```ENV
   # 存储地区数据的数据表名，必填
-  QSCMF_CHINESE_REGION_TABLE_NAME=qs_area
+  QSCMF_CHINESE_REGION_TABLE_NAME=
   
   # 数据迁移目录配置，必填，具体用法看数据迁移目录配置说明
-  QSCMF_CHINESE_REGION_MIGRATION_DIR=three
+  QSCMF_CHINESE_REGION_MIGRATION_DIR=
   ``` 
   
 + 同步数据
