@@ -30,5 +30,10 @@ MigrationCommon::isProduction();
 ```
 
 ```php
-MigrationCommon::delCity(int $id);
+MigrationCommon::delCity(123456);
 ```
+
+| 参数名称    | 类型  | 是否必填 | 备注   |
+|---------|-----|------|------|
+| id      | int | 是    | 地区编号 |
+
