@@ -19,6 +19,16 @@ composer require quansitech/qscmf-chinese-region
   # 数据迁移目录配置，必填，具体用法看数据迁移目录配置说明
   QSCMF_CHINESE_REGION_MIGRATION_DIR=
   ``` 
+
+  ```text
+  若已设置了 ENV 的值，仍提示为空，则需要检查 artisan 是否加载了 ENV 变量
+  
+  检查 \Bootstrap\Context::providerRegister(true); 前是否有： 
+  
+  $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ );
+  $dotenv->load();
+  
+  ```
   
 + 同步数据
   自动执行数据迁移来更新数据
