@@ -25,7 +25,8 @@ class FixArea53052220241025 extends Migration
     public function up()
     {
         //
-        DB::unprepared("UPDATE `qs_area` SET `cname` = '腾冲市' WHERE `qs_area`.`id` = 530522");
+        $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
+        DB::unprepared("UPDATE `$table` SET `cname` = '腾冲市' WHERE `$table`.`id` = 530522");
     }
 
     /**
@@ -36,7 +37,8 @@ class FixArea53052220241025 extends Migration
     public function down()
     {
         //
-        DB::unprepared("UPDATE `qs_area` SET `cname` = '腾冲县' WHERE `qs_area`.`id` = 530522;");
+        $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
+        DB::unprepared("UPDATE `$table` SET `cname` = '腾冲县' WHERE `$table`.`id` = 530522;");
     }
 
     public function afterCmmUp()

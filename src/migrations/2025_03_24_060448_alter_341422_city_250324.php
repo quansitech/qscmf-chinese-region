@@ -25,7 +25,8 @@ class Alter341422City250324 extends Migration
     public function up()
     {
         //
-        DB::unprepared("UPDATE `qs_area` SET `cname` = '无为市' WHERE `qs_area`.`id` = 341422;");
+        $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
+        DB::unprepared("UPDATE `$table` SET `cname` = '无为市' WHERE `$table`.`id` = 341422;");
 
     }
 
@@ -37,7 +38,9 @@ class Alter341422City250324 extends Migration
     public function down()
     {
         //
-        DB::unprepared("UPDATE `qs_area` SET `cname` = '无为区' WHERE `qs_area`.`id` = 341422;");
+        $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
+
+        DB::unprepared("UPDATE `$table` SET `cname` = '无为区' WHERE `$table`.`id` = 341422;");
 
     }
 

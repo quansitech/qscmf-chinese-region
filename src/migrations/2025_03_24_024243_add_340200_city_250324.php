@@ -33,10 +33,11 @@ class Add340200City250324 extends Migration
             ['id' => 340272, 'cname' => '安徽芜湖三山经济开发区', 'cname1' => '', 'upid' => $upid, 'ename' => '', 'pinyin' => '', 'level' => $level],
         ];
 
-        DB::table('qs_area')->insertOrIgnore($data);
+        $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
+        DB::table($table)->insertOrIgnore($data);
 
-        DB::unprepared("UPDATE `qs_area` SET `cname` = '繁昌区' WHERE `qs_area`.`id` = 340222;");
-        DB::unprepared("UPDATE `qs_area` SET `cname` = '无为区' WHERE `qs_area`.`id` = 341422;");
+        DB::unprepared("UPDATE `$table` SET `cname` = '繁昌区' WHERE `$table`.`id` = 340222;");
+        DB::unprepared("UPDATE `$table` SET `cname` = '无为区' WHERE `$table`.`id` = 341422;");
 
     }
 
@@ -48,8 +49,10 @@ class Add340200City250324 extends Migration
     public function down()
     {
         //
-        DB::unprepared("UPDATE `qs_area` SET `cname` = '繁昌县' WHERE `qs_area`.`id` = 340222;");
-        DB::unprepared("UPDATE `qs_area` SET `cname` = '无为县' WHERE `qs_area`.`id` = 341422;");
+        $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
+
+        DB::unprepared("UPDATE `$table` SET `cname` = '繁昌县' WHERE `$table`.`id` = 340222;");
+        DB::unprepared("UPDATE `$table` SET `cname` = '无为县' WHERE `$table`.`id` = 341422;");
 
     }
 

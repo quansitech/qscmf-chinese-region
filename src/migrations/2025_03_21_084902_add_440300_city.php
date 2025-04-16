@@ -33,7 +33,7 @@ class Add440300City extends Migration
             ['id' => 440311, 'cname' => '光明区', 'cname1' => '', 'upid' => $upid, 'ename' => '', 'pinyin' => '', 'level' => $level],
         ];
 
-        DB::table('qs_area')->insertOrIgnore($data);
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->insertOrIgnore($data);
     }
 
     /**
@@ -45,7 +45,7 @@ class Add440300City extends Migration
     {
         //
         $ids = [440309, 440310, 440311];
-        DB::table('qs_area')->whereIn('id', $ids)->delete();
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->whereIn('id', $ids)->delete();
     }
 
     public function afterCmmUp()

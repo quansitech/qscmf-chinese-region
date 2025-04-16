@@ -25,7 +25,7 @@ class Fix630100AddCity20250415 extends Migration
     public function up()
     {
         //
-        DB::table('qs_area')->where('id', '630122')->where('cname', '湟中县')->update(['cname'=>'湟中区']);
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->where('id', '630122')->where('cname', '湟中县')->update(['cname'=>'湟中区']);
 
     }
 
@@ -37,7 +37,7 @@ class Fix630100AddCity20250415 extends Migration
     public function down()
     {
         //
-        DB::table('qs_area')->where('id', '630122')->where('cname', '湟中区')->update(['cname'=>'湟中县']);
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->where('id', '630122')->where('cname', '湟中区')->update(['cname'=>'湟中县']);
         
     }
 

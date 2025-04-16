@@ -25,7 +25,7 @@ class Fix522400City2025041502 extends Migration
     public function up()
     {
         //
-        DB::table('qs_area')->where('id', '522400')->where('cname', '毕节地区')->update([
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->where('id', '522400')->where('cname', '毕节地区')->update([
             'cname'=>'毕节市','cname1'=>'毕节'
         ]);
     }
@@ -38,7 +38,7 @@ class Fix522400City2025041502 extends Migration
     public function down()
     {
         //
-        DB::table('qs_area')->where('id', '522400')->where('cname', '毕节市')->update([
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->where('id', '522400')->where('cname', '毕节市')->update([
             'cname'=>'毕节地区','cname'=>'毕节地'
         ]);
     }

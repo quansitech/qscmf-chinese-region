@@ -25,8 +25,8 @@ class Fix610600City20250415 extends Migration
     public function up()
     {
         //
-        DB::table('qs_area')->where('id', '610624')->where('cname', '安塞县')->update(['cname'=>'安塞区']);
-        DB::table('qs_area')->where('id', '610623')->where('cname', '子长县')->update(['cname'=>'子长市']);
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->where('id', '610624')->where('cname', '安塞县')->update(['cname'=>'安塞区']);
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->where('id', '610623')->where('cname', '子长县')->update(['cname'=>'子长市']);
     }
 
     /**
@@ -37,8 +37,8 @@ class Fix610600City20250415 extends Migration
     public function down()
     {
         //
-        DB::table('qs_area')->where('id', '610624')->where('cname', '安塞区')->update(['cname'=>'安塞县']);
-        DB::table('qs_area')->where('id', '610623')->where('cname', '子长市')->update(['cname'=>'子长县']);
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->where('id', '610624')->where('cname', '安塞区')->update(['cname'=>'安塞县']);
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->where('id', '610623')->where('cname', '子长市')->update(['cname'=>'子长县']);
     }
 
     public function afterCmmUp()

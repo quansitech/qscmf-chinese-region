@@ -25,7 +25,7 @@ class FixArea44172320241022 extends Migration
     public function up()
     {
         //
-        DB::table('qs_area')->where('id', 441723)->update(['cname'=>'阳东区']);
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->where('id', 441723)->update(['cname'=>'阳东区']);
     }
 
     /**
@@ -36,7 +36,7 @@ class FixArea44172320241022 extends Migration
     public function down()
     {
         //
-        DB::table('qs_area')->where('id', 441723)->update(['cname'=>'阳东县']);
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->where('id', 441723)->update(['cname'=>'阳东县']);
     }
 
     public function afterCmmUp()

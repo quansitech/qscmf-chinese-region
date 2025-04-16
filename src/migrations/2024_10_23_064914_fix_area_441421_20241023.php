@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Fix450300City250324 extends Migration
+class FixArea44142120241023 extends Migration
 {
 
     public function beforeCmmUp()
@@ -26,9 +26,8 @@ class Fix450300City250324 extends Migration
     {
         //
         $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
-        DB::unprepared("UPDATE `$table` SET `cname` = '临桂区' WHERE `$table`.`id` = 450322;");
-        DB::unprepared("UPDATE `$table` SET `cname` = '荔浦市' WHERE `$table`.`id` = 450331;");
 
+        DB::unprepared("UPDATE `$table` SET `cname` = '梅县区' WHERE `qs_area`.`id` = 441421");
     }
 
     /**
@@ -40,9 +39,8 @@ class Fix450300City250324 extends Migration
     {
         //
         $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
-        DB::unprepared("UPDATE `$table` SET `cname` = '临桂县' WHERE `$table`.`id` = 450322;");
-        DB::unprepared("UPDATE `$table` SET `cname` = '荔浦县' WHERE `$table`.`id` = 450331;");
 
+        DB::unprepared("UPDATE `$table` SET `cname` = '梅县' WHERE `qs_area`.`id` = 441421;");
     }
 
     public function afterCmmUp()

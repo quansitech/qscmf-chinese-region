@@ -25,7 +25,7 @@ class Fix350400City20250415 extends Migration
     public function up()
     {
         //
-        DB::table('qs_area')->where('id', '350427')->where('cname', '沙县')->update(['cname'=>'沙县区']);
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->where('id', '350427')->where('cname', '沙县')->update(['cname'=>'沙县区']);
     }
 
     /**
@@ -36,7 +36,7 @@ class Fix350400City20250415 extends Migration
     public function down()
     {
         //
-        DB::table('qs_area')->where('id', '350427')->where('cname', '沙县区')->update(['cname'=>'沙县']);
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->where('id', '350427')->where('cname', '沙县区')->update(['cname'=>'沙县']);
     }
 
     public function afterCmmUp()

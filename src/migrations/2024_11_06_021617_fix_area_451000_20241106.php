@@ -25,10 +25,11 @@ class FixArea45100020241106 extends Migration
     public function up()
     {
         //
+        $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
         $sql = <<<SQL
-UPDATE `qs_area` SET `cname` = '田阳区' WHERE `qs_area`.`id` = 451021;
-UPDATE `qs_area` SET `cname` = '平果市' WHERE `qs_area`.`id` = 451023;
-UPDATE `qs_area` SET `cname` = '靖西市' WHERE `qs_area`.`id` = 451025;
+UPDATE `$table` SET `cname` = '田阳区' WHERE `$table`.`id` = 451021;
+UPDATE `$table` SET `cname` = '平果市' WHERE `$table`.`id` = 451023;
+UPDATE `$table` SET `cname` = '靖西市' WHERE `$table`.`id` = 451025;
 SQL;
 
         DB::unprepared($sql);
@@ -42,10 +43,12 @@ SQL;
     public function down()
     {
         //
+        $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
+
         $sql = <<<SQL
-UPDATE `qs_area` SET `cname` = '田阳县' WHERE `qs_area`.`id` = 451021;
-UPDATE `qs_area` SET `cname` = '平果县' WHERE `qs_area`.`id` = 451023;
-UPDATE `qs_area` SET `cname` = '靖西县' WHERE `qs_area`.`id` = 451025;
+UPDATE `$table` SET `cname` = '田阳县' WHERE `$table`.`id` = 451021;
+UPDATE `$table` SET `cname` = '平果县' WHERE `$table`.`id` = 451023;
+UPDATE `$table` SET `cname` = '靖西县' WHERE `$table`.`id` = 451025;
 SQL;
 
         DB::unprepared($sql);

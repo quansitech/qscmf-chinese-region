@@ -32,7 +32,7 @@ class Add650000City250324 extends Migration
             ['id' => 659004, 'cname' => '五家渠市', 'cname1' => '五家渠', 'upid' => $upid, 'ename' => '', 'pinyin' => '', 'level' => $level],
         ];
 
-        DB::table('qs_area')->insertOrIgnore($data);
+        DB::table(\Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName())->insertOrIgnore($data);
     }
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Fix450300City250324 extends Migration
+class FixAreaGuizhou20241023 extends Migration
 {
 
     public function beforeCmmUp()
@@ -26,9 +26,14 @@ class Fix450300City250324 extends Migration
     {
         //
         $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
-        DB::unprepared("UPDATE `$table` SET `cname` = '临桂区' WHERE `$table`.`id` = 450322;");
-        DB::unprepared("UPDATE `$table` SET `cname` = '荔浦市' WHERE `$table`.`id` = 450331;");
+        
+        $sql = <<<SQL
+UPDATE `$table` SET `cname` = '七星关区' WHERE `$table`.`id` = 522401;
 
+UPDATE `$table` SET `cname` = '铜仁市', `cname1` = '铜仁' WHERE `$table`.`id` = 522200;
+SQL;
+
+        \Illuminate\Support\Facades\DB::unprepared($sql);
     }
 
     /**
@@ -40,9 +45,14 @@ class Fix450300City250324 extends Migration
     {
         //
         $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
-        DB::unprepared("UPDATE `$table` SET `cname` = '临桂县' WHERE `$table`.`id` = 450322;");
-        DB::unprepared("UPDATE `$table` SET `cname` = '荔浦县' WHERE `$table`.`id` = 450331;");
 
+        $sql = <<<SQL
+UPDATE `$table` SET `cname` = '毕节市' WHERE `$table`.`id` = 522401;
+
+UPDATE `$table` SET `cname` = '铜仁地区', `cname1` = '铜仁地' WHERE `$table`.`id` = 522200;
+SQL;
+
+        \Illuminate\Support\Facades\DB::unprepared($sql);
     }
 
     public function afterCmmUp()
