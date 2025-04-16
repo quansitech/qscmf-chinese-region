@@ -30,5 +30,5 @@ MigrationCommon::isProduction();
 ```
 
 ```php
-MigrationCommon::delCity(123);
+MigrationCommon::delCity(int $id);
 ```
