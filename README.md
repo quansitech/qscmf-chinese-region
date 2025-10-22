@@ -34,6 +34,7 @@ composer require quansitech/qscmf-chinese-region
   - `four`：四层数据，省市区乡镇
 
 ##### *开发时需要根据不同的数据迁移目录来创建不同的迁移文件*
+##### *若有删除地区，需要维护 deprecation-log.json 文件来警告*
 
 #### 工具类说明
 [MigrationCommon](./src/docs/MigrationCommon.md)

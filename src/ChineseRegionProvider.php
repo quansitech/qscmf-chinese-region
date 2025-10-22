@@ -4,6 +4,7 @@ namespace Qscmf\ChineseRegion;
 use Bootstrap\LaravelProvider;
 use Bootstrap\Provider;
 use Bootstrap\RegisterContainer;
+use Qscmf\ChineseRegion\Lib\UpdateNotifier;
 
 class ChineseRegionProvider implements LaravelProvider, Provider {
 
@@ -19,6 +20,8 @@ class ChineseRegionProvider implements LaravelProvider, Provider {
 
     public function register()
     {
+        
+        UpdateNotifier::checkForDeprecations();
 
     }
 }
