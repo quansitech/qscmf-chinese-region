@@ -26,7 +26,7 @@ class FixArea53052220241025 extends Migration
     {
         //
         $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
-        DB::unprepared("UPDATE `$table` SET `cname` = '腾冲市' WHERE `$table`.`id` = 530522");
+        DB::table($table)->where('id', 530522)->update(['cname' => '腾冲市']);
     }
 
     /**
@@ -38,7 +38,7 @@ class FixArea53052220241025 extends Migration
     {
         //
         $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
-        DB::unprepared("UPDATE `$table` SET `cname` = '腾冲县' WHERE `$table`.`id` = 530522;");
+        DB::table($table)->where('id', 530522)->update(['cname' => '腾冲县']);
     }
 
     public function afterCmmUp()

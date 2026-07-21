@@ -36,8 +36,8 @@ class Add340200City250324 extends Migration
         $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
         DB::table($table)->insertOrIgnore($data);
 
-        DB::unprepared("UPDATE `$table` SET `cname` = '繁昌区' WHERE `$table`.`id` = 340222;");
-        DB::unprepared("UPDATE `$table` SET `cname` = '无为区' WHERE `$table`.`id` = 341422;");
+        DB::table($table)->where('id', 340222)->update(['cname' => '繁昌区']);
+        DB::table($table)->where('id', 341422)->update(['cname' => '无为区']);
 
     }
 
@@ -51,8 +51,8 @@ class Add340200City250324 extends Migration
         //
         $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
 
-        DB::unprepared("UPDATE `$table` SET `cname` = '繁昌县' WHERE `$table`.`id` = 340222;");
-        DB::unprepared("UPDATE `$table` SET `cname` = '无为县' WHERE `$table`.`id` = 341422;");
+        DB::table($table)->where('id', 340222)->update(['cname' => '繁昌县']);
+        DB::table($table)->where('id', 341422)->update(['cname' => '无为县']);
 
     }
 

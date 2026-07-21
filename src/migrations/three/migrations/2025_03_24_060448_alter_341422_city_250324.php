@@ -26,7 +26,7 @@ class Alter341422City250324 extends Migration
     {
         //
         $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
-        DB::unprepared("UPDATE `$table` SET `cname` = '无为市' WHERE `$table`.`id` = 341422;");
+        DB::table($table)->where('id', 341422)->update(['cname' => '无为市']);
 
     }
 
@@ -40,7 +40,7 @@ class Alter341422City250324 extends Migration
         //
         $table = \Qscmf\ChineseRegion\Lib\MigrationCommon::getTableName();
 
-        DB::unprepared("UPDATE `$table` SET `cname` = '无为区' WHERE `$table`.`id` = 341422;");
+        DB::table($table)->where('id', 341422)->update(['cname' => '无为区']);
 
     }
 
